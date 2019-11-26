@@ -20,14 +20,13 @@ function rrandom() {
 }
 $(document).ready(function () {
 
+    $("#atk-r").html("ATK: "+ uno.atk);
+    $("#def-r").html("DEF: " + uno.def);
+    $("#life-r").html("LIFE: " + uno.life);
 
-    $("#atk-r").html(uno.atk);
-    $("#def-r").html(uno.def);
-    $("#life-r").html(uno.life);
-
-    $("#atk-j").html(uno.atk);
-    $("#def-j").html(uno.def);
-    $("#life-j").html(uno.life);
+    $("#atk-j").html("ATK: " + uno.atk);
+    $("#def-j").html("DEF: " + uno.def);
+    $("#life-j").html("LIFE: " + uno.life);
 
     $("#uno").attr("disabled", true);
     $("#dos").attr("disabled", true);
@@ -37,7 +36,6 @@ $(document).ready(function () {
         (x == 1) ? $("#uno").attr("disabled", false): $("#dos").attr("disabled", false);
         $("#turno").attr("disabled", true)
     });
-
 });
 
 function randomA() {
@@ -51,7 +49,6 @@ function randomD() {
 }
 
 $("#resultado").html("Turno número: " + turno);
-// while (uno.life >= 0 && dos.life >= 0) {
 $("#uno").click(function () {
     if (uno.life && dos.life > 0) {
 
@@ -60,13 +57,13 @@ $("#uno").click(function () {
 
         uno.atk = uno.atk + randomA();
         dos.def = dos.def + randomD();
-        $("#atk-r").html(uno.atk);
-        $("#def-j").html(dos.def);
+        $("#atk-r").html("ATK: "+ uno.atk);
+        $("#def-j").html("DEF: " + dos.def);
 
         if (uno.atk > dos.def) {
             var x = uno.atk - dos.def;
             dos.life = dos.life - x;
-            $("#life-j").html(dos.life);
+            $("#life-j").html("LIFE: " + dos.life);
             if (dos.life <= 0) {
                 isAlive();
             }
@@ -75,15 +72,12 @@ $("#uno").click(function () {
             var isNegative = Math.sign(x);
             if (isNegative == 1) {
                 uno.life = uno.life - x;
-                $("#life-r").html(uno.life);
+                $("#life-r").html("LIFE: " + uno.life);
         
-                // if(uno.life <= 0){
-                //     isAlive();
-                // }
             } else {
                 x *= -1;
                 uno.life = uno.life - x;
-                $("#life-r").html(uno.life);
+                $("#life-r").html("LIFE: " + uno.life);
                 if (uno.life <= 0) {
                     isAlive();
                 }
@@ -92,15 +86,8 @@ $("#uno").click(function () {
                 isAlive();
             }
         }
-        console.log(uno);
-        console.log(dos);
-        console.log('----------------');
-
-        // $("#uno").attr("disabled", true);
-        // $("#dos").attr("disabled", false);
 
     } else {
-
         isAlive();
     }
 
@@ -116,13 +103,13 @@ $("#dos").click(function () {
 
         dos.atk = dos.atk + randomA();
         uno.def = uno.def + randomD();
-        $("#def-r").html(uno.def);
-        $("#atk-j").html(dos.atk);
+        $("#def-r").html("DEF: " + uno.def);
+        $("#atk-j").html("ATK: " + dos.atk);
 
         if (dos.atk > uno.def) {
             var x = dos.atk - uno.def;
             uno.life = uno.life - x;
-            $("#life-r").html(uno.life);
+            $("#life-r").html("LIFE: " + uno.life);
 
             if (uno.life <= 0) {
                 isAlive();
@@ -132,14 +119,11 @@ $("#dos").click(function () {
             var isNegative = Math.sign(x);
             if (isNegative == 1) {
                 dos.life = dos.life - x;
-                $("#life-j").html(dos.life);
-                // if(dos.life <= 0){
-                //     isAlive();
-                // }
+                $("#life-j").html("LIFE: " + dos.life);
             } else {
                 x *= -1;
                 dos.life = dos.life - x;
-                $("#life-j").html(dos.life);
+                $("#life-j").html("LIFE: " + dos.life);
                 if (dos.life <= 0) {
                     isAlive();
                 }
@@ -148,17 +132,8 @@ $("#dos").click(function () {
                 isAlive();
             }
         }
-        console.log(uno);
-        console.log(dos);
-        console.log('----------------');
-
-        // $("#dos").attr("disabled", true);
-        // $("#uno").attr("disabled", false);
-
-        // isAlive();
 
     } else {
-
         isAlive();
     }
 
