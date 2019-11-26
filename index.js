@@ -4,12 +4,12 @@ var iDadoDef;
 var uno = {
     atk: 10,
     def: 5,
-    life: 100
+    life: 50
 }
 var dos = {
     atk: 10,
     def: 5,
-    life: 100
+    life: 50
 }
 
 function randomA() {
@@ -18,61 +18,73 @@ function randomA() {
 }
 
 function randomD() {
-    iDadoDef = Math.floor(Math.random() * (11 - 5)) + 5;
+    iDadoDef = Math.floor(Math.random() * (11 - 1)) + 1;
     return iDadoDef;
 }
 
-// randomAD()[0] - atk
-// randomAD()[1] -def
-function increaseAUNO() {
+/*nota  para jugar
+tu no puedes ver tu defensa pero si tu atk
+y no puedes ver el atk del cpu pero si la defensa
+*/
+
+let turno = 1;
+let ronda = 1;
+while (uno.life >= 0 && dos.life >= 0) {
+
     uno.atk = uno.atk + randomA();
-    return uno.atk;
-}
-function increaseADOS() {
+    uno.def = uno.def + randomD();
     dos.atk = dos.atk + randomA();
-    return dos.atk;
-}
-
-function increaseD() {
     dos.def = dos.def + randomD();
-    return dos.def;
+
+    if (turno == 1) {
+        if (uno.atk > dos.def) {
+            var x = uno.atk - dos.def;
+            //    console.log(x);
+            dos.life = dos.life - x;
+            //    console.log(dos.life);
+        } else {
+            var x = dos.atk - uno.def;
+            var isNegative = Math.sign(x);
+            if (isNegative == 1) {
+                uno.life = uno.life - x;
+            } else {
+                x *= -1;
+                uno.life = uno.life - x;
+            }
+        }
+        turno = 2;
+    } else {
+        // uno.life = uno.life - dos.atk;
+        if (dos.atk > uno.def) {
+            var x = dos.atk - uno.def;
+            uno.life = uno.life - x;
+        } else {
+            var x = uno.atk - dos.def;
+            var isNegative = Math.sign(x);
+            if (isNegative == 1) {
+                dos.life = dos.life - x;
+            } else {
+                x *= -1;
+                dos.life = dos.life - x;
+            }
+        }
+        turno = 1;
+    }
+
+
+    console.log(uno)
+    console.log(dos)
+    console.log("------------ FIN " + ronda + " --------");
+    ronda++;
+    // break;
+
+    if (uno.life >= 0 && dos.life >= 0) {
+        continue;
+    } else if (uno.life >= 0) {
+        var x = "EL ganador es UNO con: " + uno.life;
+        $("#resultado").html(x);
+    } else {
+        var x = "EL ganador es DOS con: " + dos.life;
+        $("#resultado").html(x);
+    }
 }
-
-if ( increaseAUNO() >  increaseD()) {
-    console.log("MAYOR", increaseAUNO());
-    dos.life = dos.life - increaseAUNO();
-} else {
-    console.log("MENOR", increaseAUNO());
-    uno.life = uno.life - increaseADOS();
-}
-console.log(uno)
-console.log(dos)
-console.log("------------FIN 1 ------------")
-
-dos.atk = dos.atk + randomA();
-uno.def = uno.def + randomD();
-if (dos.atk > uno.def) {
-    console.log("MAYOR", dos.atk);
-    uno.life = uno.life - dos.atk;
-} else {
-    console.log("MENOR", dos.atk);
-    dos.life = dos.life - uno.atk;
-}
-
-console.log(uno)
-console.log(dos)
-console.log("------------FIN 2 ------------")
-
-uno.atk = uno.atk + randomA();
-dos.def = dos.def + randomD();
-
-if (uno.atk > dos.def) {
-    console.log("MAYOR", uno.atk);
-    dos.life = dos.life - uno.atk;
-} else {
-    console.log("MENOR", uno.atk);
-    uno.life = uno.life - dos.atk;
-}
-console.log(uno)
-console.log(dos)
-console.log("------------FIN 3 ------------")

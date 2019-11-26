@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>BCards</title>
 </head>
 <body>
-    
+    <div class="contenedor">asas
+        <div class="contenedor-tarjeta">
+            <div class="tarjeta">
+                <img src="" alt="rival">
+            </div>
+            <div class="datos">
+                <div id="atk-r"></div>
+                <div id="def-r"></div>
+                <div id="life-r"></div>
+            </div>
+        </div>
+        <div class="contenedor-tarjeta">
+            <div class="tarjeta">
+                <img src="" alt="jugador">
+            </div>
+            <div class="datos">
+                <div id="atk-j"></div>
+                <div id="def-j"></div>
+                <div id="life-j"></div>
+            </div>
+        </div>
+    </div>
+    <div id="ganador">Ganador: </div>
+    <button id="turno">Empezar</button>
+    <button id="uno">UNO</button>
+    <button id="dos" disabled>DOS</button>
+    <div id="resultado"></div>
 </body>
-<script src="index.js"></script>
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="turno.js"></script>
 </html>
