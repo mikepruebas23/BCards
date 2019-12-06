@@ -2,6 +2,12 @@
     margin:0;
     padding: 0;
 }
+.seleccion{
+    height: 90vh;
+    width: 100%;
+    background: rgba(49, 49, 49, 0.73);
+    position: absolute;
+}
 .contenedor{
     display: flex;
     flex-direction: column;
@@ -26,5 +32,20 @@
     text-align: center;
 }
 .datos>div{
+    width: 30%;
+}
+.barra-vida{
+    background: red;
+}
+.potenciadores{
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0;
+}
+.potenciadores>div{
     width: 30%;
 }
