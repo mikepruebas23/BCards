@@ -1,0 +1,29 @@
+
+.btn2 {
+    font-family: 'Lilita One';
+    margin-top: 10%;
+    height: 10%;
+    width: 45%;
+    font-size: 20px;
+    text-decoration: none;
+    box-shadow: rgba(255, 255, 255, 0.01) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 1px;
+    border-top-width: 0.0625rem;
+    transition: color 0.1s ease-in-out 0s, background-color 0.1s ease-in-out 0s;
+    border-width: 1px;
+    color: rgb(255, 255, 255);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 0.25rem;
+    background: #2ed573;
+    box-shadow: 0 0 0 1px #000;
+    border-bottom: 3px solid #209e55;
+    border-top: 3px solid #37f987;
+    border-radius: 3px;
+    text-shadow: 1px 1px #000, -1px 1px #000, 1px -1px #000, -1px -1px #000, 1px 1px 5px #555;
+}
+.btn2:active {
+    transform: scale(.9);
+
+}

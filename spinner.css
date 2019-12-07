@@ -17,6 +17,7 @@
   } */
   
   .spinning-loader {
+    margin-top: 10%;
     width: var(--s-loader-width);
     height: var(--s-loader-height);
     border: 5px solid var(--s-loader-border-color-trans);

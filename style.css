@@ -3,10 +3,14 @@
     padding: 0;
 }
 .seleccion{
-    height: 90vh;
+    height: 100vh;
     width: 100%;
-    background: rgba(49, 49, 49, 0.73);
+    background: rgba(49, 49, 49, 0.98);
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .contenedor{
     display: flex;
