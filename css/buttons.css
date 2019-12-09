@@ -1,18 +1,33 @@
+.btn {
+    font-family: 'Lilita One';
+    margin: 7px;
+    text-align: center;
+    background: lightgray;
+    padding: .6em .8em .8em;
+    border: none;
+    color: white;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: inset 0 -.2em rgba(0, 0, 0, .2);
+    outline: 0;
+    transition: .2s;
+    will-change: transform;
+}
 
 .btn1 {
     font-family: 'Lilita One';
+    margin: 5px 0;
     /* height: 10%;
     width: 45%; */
+    width: 20%;
+    padding: 5px;
     text-decoration: none;
     box-shadow: rgba(255, 255, 255, 0.01) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 1px;
     border-top-width: 0.0625rem;
     transition: color 0.1s ease-in-out 0s, background-color 0.1s ease-in-out 0s;
     border-width: 1px;
     color: rgb(255, 255, 255);
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
     border-radius: 0.25rem;
     background: #2ed573;
     box-shadow: 0 0 0 1px #000;
