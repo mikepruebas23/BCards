@@ -1,0 +1,74 @@
+.card {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 0 solid #edf2f9;
+    border-radius: .375rem;
+    box-shadow: 0 7px 14px 0 rgba(65, 69, 88, .1), 0 3px 6px 0 rgba(0, 0, 0, .07);
+}
+
+.card-body {
+    display: flex;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.card-content {
+    width: 20%;
+}
+.card-text{
+    font-family: 'Lilita One';
+    font-size: 13px;
+}
+.t-card {
+    /* font-family: 'lilita One'; */
+    color: #5e6e82;
+    line-height: 1.5;
+    /* text-shadow: 2px 2px #000; */
+}
+
+.like {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-image: url('../images/corazon.png');
+    background-size: 1450px 50px;
+}
+
+.like.is-liked {
+    animation-name: like;
+    animation-duration: .8s;
+    /* animation-timing-function: steps(28); */
+    animation-timing-function: steps(1);
+    animation-fill-mode: forwards;
+}
+
+@keyframes like {
+    0% {
+        background-position: 0 0;
+        /* background-position: right; */
+    }
+
+    100% {
+        /* background-position: -2800px 0; */
+        background-position: right;
+    }
+}
+#heart,
+#rayo,
+#suerte,
+#defe,
+#atac{
+    color: #aab8c2;
+    font-size: 20px;
+    /* text-shadow: 1px 1px #0a0a0a; */
+}
+.is-rayo {
+
+    color: var(--lime) !important;
+    /* transform: scale(.9); */
+    /* transform: rotateY(360deg) */
+    /* text-shadow: 1px 1px #0a0a0a; */
+}
