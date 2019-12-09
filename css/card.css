@@ -1,4 +1,5 @@
 .card {
+    padding: 8px;
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -8,10 +9,27 @@
     border-radius: .375rem;
     box-shadow: 0 7px 14px 0 rgba(65, 69, 88, .1), 0 3px 6px 0 rgba(0, 0, 0, .07);
 }
-
+.enTurno{
+    font-family: 'Lilita One';
+    font-size: 15px;
+    background: var(--verde-energia);
+    /* width: 10%; */
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+.sinTurno{
+    font-family: 'Lilita One';
+    font-size: 15px;
+    background: var(--rojo);
+    /* width: 10%; */
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
 .card-body {
     display: flex;
-    padding: 1.25rem;
+    padding: 5px;
     text-align: center;
 }
 
@@ -27,6 +45,17 @@
     color: #5e6e82;
     line-height: 1.5;
     /* text-shadow: 2px 2px #000; */
+}
+.card-footer{
+    display: flex;
+    flex-direction: row;
+    background: var(--negro-fondo1);
+    padding: 5px;
+    justify-content: space-around;
+    border-radius: .375rem;
+}
+.cf-child{
+    background: var(--fondo-gris-claro);
 }
 
 .like {

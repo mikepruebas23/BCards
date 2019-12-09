@@ -12,35 +12,43 @@
 </head>
 
 <body>
-    <div id="seleccion" class="seleccion" style="dispslay: none;">
+    <div id="seleccion" class="seleccion" style="display: none;">
         <div id="cpu-inicia" class="cpu-inicia">cpu inicia</div>
         <div id="humano-inicia" class="humano-inicia">humano inicia</div>
         <div id="spinner" class="spinning-loader"></div>
         <button id="turno" class="btn2">Empezar</button>
     </div>
-    <button id="plusAtk">ATK + 2</button>
-    <button id="plusDef">DEF + 2</button>
-    <button id="plusLife">LIFE + 2</button>
-    <div class="contenedor" style="display: nsone;">asas
-        <div class="contenedor-tarjeta">
-            <div class="tarjeta">
-                <img src="" alt="rival">
-            </div>
-            <div class="datos">
-                <div id="atk-r"></div>
-                <div id="def-r"></div>
-                <div id="" class="datos-life">
-                    <div id="life-r"></div>
-                    <div id="vida-cpu" class="barra-vida"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="ganador">Ganador: </div>
-    <button id="uno">UNO</button>
-    <button id="dos" disabled>DOS</button>
+
     <div id="resultado"></div>
     <div class="card">
+        <div id="r-turno"></div>
+        <div class="card-body">
+            <!-- <div class="car-profile">
+                    <img src="images/goasrra.svg" alt="CPU image" style="width: 60px;">
+                    <p>CPU</p>
+                </div> -->
+            <div class="card-content">
+                <i class="fas fa-heart" id="heart"></i>
+                <div id="life-r" class="card-text"></div>
+            </div>
+            <div class="card-content"><i class="fas fa-fist-raised" id="atac"></i>
+                <div id="atk-r" class="card-text"></div>
+            </div>
+            <div class="card-content">
+                <i class="fas fa-shield-alt" id="defe"></i>
+                <div id="def-r" class="card-text"></div>
+            </div>
+            <div class="card-content"><i class="fas fa-feather-alt" id="suerte"></i>
+                <div id="suerte-r" class="card-text"></div>
+            </div>
+            <div class="card-content"><i class="fas fa-bolt" id="rayo"></i>
+                <div id="ener-r" class="card-text"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="card">
+        <div id="j-turno"></div>
         <div class="card-body">
             <!-- <div class="car-profile">
                 <img src="images/goasrra.svg" alt="CPU image" style="width: 60px;">
@@ -64,7 +72,16 @@
                 <div id="ener-j" class="card-text"></div>
             </div>
         </div>
+        <div class="card-footer">
+            <button class="btn1" id="plusLife">LIFE + 2</button>
+            <button class="btn1" id="plusAtk">ATK + 2</button>
+            <button class="btn1" id="plusDef">DEF + 2</button>
+        </div>
     </div>
+    <div id="ganador">Ganador: </div>
+    <button id="uno">UNO</button>
+    <button id="dos" disabled>DOS</button>
+    <div id="resultado"></div>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="js/jquery-3.4.1.min.js"></script>

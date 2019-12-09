@@ -27,6 +27,8 @@ var dos = {
 
 $("#plusAtk").click(function () {
     $("#plusAtk").attr("disabled", true);
+    // $("#plusAtk").removeClass("btn1");
+    $("#plusAtk").addClass("btn-disabled");
     dos.atk = dos.atk + 2;
     $("#atk-j").html(dos.atk);
     console.log(uno);
@@ -34,6 +36,7 @@ $("#plusAtk").click(function () {
 });
 $("#plusDef").click(function () {
     $("#plusDef").attr("disabled", true);
+    $("#plusDef").addClass("btn-disabled");
     dos.def = dos.def + 2;
     $("#def-j").html(dos.def);
     console.log(uno);
@@ -41,6 +44,7 @@ $("#plusDef").click(function () {
 });
 $("#plusLife").click(function () {
     $("#plusLife").attr("disabled", true);
+    $("#plusLife").addClass("btn-disabled");
     dos.life = dos.life + 2;
     $("#life-j").html(dos.life);
     console.log(uno);
@@ -64,13 +68,14 @@ $(document).ready(function () {
     $("#atk-r").html(uno.atk);
     $("#def-r").html(uno.def);
     $("#life-r").html(uno.life);
-    $("#vida-cpu").html(uno.life);
+    $("#ener-r").html( uno.energia);
+    $("#suerte-r").html(uno.suerte);
 
-    $("#atk-j").html(uno.atk);
-    $("#def-j").html( uno.def);
-    $("#life-j").html(uno.life);
-    $("#ener-j").html( uno.energia);
-    $("#suerte-j").html(uno.suerte);
+    $("#atk-j").html(dos.atk);
+    $("#def-j").html( dos.def);
+    $("#life-j").html(dos.life);
+    $("#ener-j").html( dos.energia);
+    $("#suerte-j").html(dos.suerte);
 
     $("#uno, #dos").attr("disabled", true);
 
@@ -82,10 +87,18 @@ $(document).ready(function () {
             case 1:
                 $("#cpu-inicia").show();
                 $("#uno").attr("disabled", false);
+                $("#r-turno").html("En Turno");
+                $("#r-turno").addClass('enTurno');
+                $("#j-turno").html("En Espera");
+                $("#j-turno").addClass('sinTurno');
                 break;
             case 2:
                 $("#humano-inicia").show();
                 $("#dos").attr("disabled", false);
+                $("#j-turno").html("En Turno");
+                $("#j-turno").addClass('enTurno');
+                $("#r-turno").html("En Espera");
+                $("#r-turno").addClass('sinTurno');
                 break;
         }
 
@@ -153,8 +166,7 @@ $("#uno").click(function () {
 
     turno++;
     $("#resultado").html("Turno número: " + turno);
-    // console.log(uno);
-    // console.log(dos);
+
 });
 
 $("#dos").click(function () {
