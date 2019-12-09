@@ -12,14 +12,17 @@
 </head>
 
 <body>
-    <div id="seleccion" class="seleccion" style="display: none;">
+    <div id="seleccion" class="seleccion" style="display: non; margin-top:-15px">
         <div id="cpu-inicia" class="cpu-inicia">cpu inicia</div>
         <div id="humano-inicia" class="humano-inicia">humano inicia</div>
         <div id="spinner" class="spinning-loader"></div>
         <button id="turno" class="btn2">Empezar</button>
     </div>
 
-    <div id="resultado"></div>
+    <div class="info card card-text">
+        <div class="info-turno" id="resultado"></div>
+        <div class="info-ganador" id="ganador">Ganador: </div>
+    </div>
     <div class="card">
         <div id="r-turno"></div>
         <div class="card-body">
@@ -78,10 +81,9 @@
             <button class="btn1" id="plusDef">DEF + 2</button>
         </div>
     </div>
-    <div id="ganador">Ganador: </div>
+
     <button id="uno">UNO</button>
     <button id="dos" disabled>DOS</button>
-    <div id="resultado"></div>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="js/jquery-3.4.1.min.js"></script>

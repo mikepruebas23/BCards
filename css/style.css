@@ -25,11 +25,29 @@
     --negro-fondo1:#323232;
     --s-morado-fondo1:#727cf5;
     --fondo-gris-claro:#edf2f9;
+    --fondo-amarillo:#ffc107 ;
+    --fondo-gris2: #aab8c2; 
   }
 
 @media screen and (min-width: 320px) and (max-width: 736px) {
     body{
         background: var(--fondo-gris-claro);
+    }
+    .info{
+        display: flex;
+        flex-direction: row;
+       
+    }
+    .info-turno{
+        /* background: var(--fondo-gris2); */
+        /* color: var(--fondo-amarillo); */
+    }
+    .info-turno,
+    .info-ganador{
+        text-align: center;
+        margin: 0 auto;
+        /* background:#aab8c2; */
+        width:45%;
     }
     .seleccion {
         height: 100vh;
