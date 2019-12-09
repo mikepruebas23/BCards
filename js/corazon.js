@@ -4,7 +4,7 @@ $(document).ready(function () {
     
 });
 
-const $like = document.getElementById('like');
+const $like = document.getElementById('heart');
 const $rayo = document.getElementById('rayo');
 var contador = 12;
 

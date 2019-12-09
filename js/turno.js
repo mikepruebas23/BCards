@@ -128,9 +128,9 @@ $("#uno").click(function () {
         $("#dos").attr("disabled", false);
 
         uno.atk = uno.atk + randomA();
-        dos.def = dos.def + randomD();
+        // dos.def = dos.def + randomD();
         $("#atk-r").html(uno.atk);
-        $("#def-j").html(dos.def);
+        // $("#def-j").html(dos.def);
 
         if (uno.atk > dos.def) {
             var x = uno.atk - dos.def;
@@ -164,9 +164,17 @@ $("#uno").click(function () {
         isAlive();
     }
 
+    //aumentando defensa al final
+    dos.def = dos.def + randomD();
+    $("#def-j").html(dos.def);
+
     turno++;
     $("#resultado").html("Turno número: " + turno);
-
+    $("#j-turno").html("En Turno");
+    $("#j-turno").removeClass('sinTurno');
+    $("#j-turno").addClass('enTurno');
+    $("#r-turno").html("En Espera");
+    $("#r-turno").addClass('sinTurno');
 });
 
 $("#dos").click(function () {
@@ -182,8 +190,8 @@ $("#dos").click(function () {
         // $("#uno").attr("disabled", false);
 
         dos.atk = dos.atk + randomA();
-        uno.def = uno.def + randomD();
-        $("#def-r").html(uno.def);
+        // uno.def = uno.def + randomD();
+        // $("#def-r").html(uno.def);
         $("#atk-j").html(dos.atk);
 
         if (dos.atk > uno.def) {
@@ -217,11 +225,17 @@ $("#dos").click(function () {
         isAlive();
     }
 
+    //agregando defensa al final
+    uno.def = uno.def + randomD();
+    $("#def-r").html(uno.def);
+
     turno++;
     $("#resultado").html("Turno número: " + turno);
-
-    // console.log(uno);
-    // console.log(dos);
+    $("#r-turno").html("En Turno");
+    $("#r-turno").removeClass('sinTurno');
+    $("#r-turno").addClass('enTurno');
+    $("#j-turno").html("En Espera");
+    $("#j-turno").addClass('sinTurno');
 });
 
 function isAlive() {

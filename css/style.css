@@ -38,10 +38,10 @@
         flex-direction: row;
        
     }
-    .info-turno{
-        /* background: var(--fondo-gris2); */
-        /* color: var(--fondo-amarillo); */
-    }
+    /* .info-turno{
+        background: var(--fondo-gris2); 
+        color: var(--fondo-amarillo); 
+    } */
     .info-turno,
     .info-ganador{
         text-align: center;
