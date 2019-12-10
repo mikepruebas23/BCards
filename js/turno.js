@@ -91,6 +91,7 @@ $(document).ready(function () {
                 $("#r-turno").addClass('enTurno');
                 $("#j-turno").html("En Espera");
                 $("#j-turno").addClass('sinTurno');
+                $("#dos,#j-defender").addClass("btn-disabled");
                 break;
             case 2:
                 $("#humano-inicia").show();
@@ -125,7 +126,8 @@ $("#uno").click(function () {
     if (uno.life && dos.life > 0) {
 
         $("#uno").attr("disabled", true);
-        $("#dos").attr("disabled", false);
+        $("#dos,#j-defender").attr("disabled", false);
+        $("#dos,#j-defender").removeClass("btn-disabled");
 
         uno.atk = uno.atk + randomA();
         // dos.def = dos.def + randomD();
@@ -180,7 +182,8 @@ $("#uno").click(function () {
 $("#dos").click(function () {
     if (uno.life && dos.life > 0) {
 
-        $("#dos").attr("disabled", true);
+        $("#dos,#j-defender").attr("disabled", true);
+        $("#dos,#j-defender").addClass("btn-disabled");
         $("#uno").attr("disabled", false);
 
         if (suerteRndm() == 13) {
@@ -241,13 +244,13 @@ $("#dos").click(function () {
 function isAlive() {
     if (uno.life <= 0) {
         $("#ganador").html("Ganador: JUGADOR");
-        // $("#uno").attr("disabled", true);
+        $("#uno").attr("disabled", true);
         $("#dos").attr("disabled", true);
         return;
     } else if (dos.life <= 0) {
         $("#ganador").html("Ganador: CPU");
         $("#dos").attr("disabled", true);
-        // $("#uno").attr("disabled", true);
+        $("#uno").attr("disabled", true);
         return;
     }
 }
