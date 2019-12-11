@@ -10,19 +10,21 @@ let plusLife;
 
 let iSuerte;
 
+//id de elementos
+
 var uno = {
     atk: 7,
     def: 5,
     life: 100,
     energia: 0,
-    suerte:0
+    suerte: 0
 }
 var dos = {
     atk: 7,
     def: 5,
     life: 100,
     energia: 0,
-    suerte:0
+    suerte: 0
 }
 
 $("#plusAtk").click(function () {
@@ -68,16 +70,17 @@ $(document).ready(function () {
     $("#atk-r").html(uno.atk);
     $("#def-r").html(uno.def);
     $("#life-r").html(uno.life);
-    $("#ener-r").html( uno.energia);
+    $("#ener-r").html(uno.energia);
     $("#suerte-r").html(uno.suerte);
 
     $("#atk-j").html(dos.atk);
-    $("#def-j").html( dos.def);
+    $("#def-j").html(dos.def);
     $("#life-j").html(dos.life);
-    $("#ener-j").html( dos.energia);
+    $("#ener-j").html(dos.energia);
     $("#suerte-j").html(dos.suerte);
 
-    $("#uno, #dos").attr("disabled", true);
+    // $("#uno, #dos").attr("disabled", true);
+    $("#uno").attr("disabled", true);
 
     $("#turno").click(function () {
         $("#spinner").show();
@@ -91,7 +94,7 @@ $(document).ready(function () {
                 $("#r-turno").addClass('enTurno');
                 $("#j-turno").html("En Espera");
                 $("#j-turno").addClass('sinTurno');
-                $("#dos,#j-defender").addClass("btn-disabled");
+                $("#dos,#j-defender").addClass("btn-disabled-def");
                 break;
             case 2:
                 $("#humano-inicia").show();
@@ -109,6 +112,24 @@ $(document).ready(function () {
         }, 2000);
     });
 });
+$("#dos").click(function () {
+    verificarDesicion(1);
+});
+
+$("#j-defender").click(function () {
+    verificarDesicion(2);
+});
+
+function verificarDesicion(value) {
+    switch (value) {
+        case 1:
+            playerSeleccionATK();
+            break;
+        case 2:
+            playerSeleccionDEF();
+            break;
+    }
+}
 
 function randomA() {
     iDadoAtk = Math.floor(Math.random() * (6 - 1)) + 1;
@@ -127,7 +148,7 @@ $("#uno").click(function () {
 
         $("#uno").attr("disabled", true);
         $("#dos,#j-defender").attr("disabled", false);
-        $("#dos,#j-defender").removeClass("btn-disabled");
+        $("#dos,#j-defender").removeClass("btn-disabled-def");
 
         uno.atk = uno.atk + randomA();
         // dos.def = dos.def + randomD();
@@ -179,11 +200,29 @@ $("#uno").click(function () {
     $("#r-turno").addClass('sinTurno');
 });
 
+function playerSeleccionATK() {
+
+}
+
+function playerSeleccionDEF() {
+
+    $("#dos").addClass("btn-disabled-def").attr("disabled", true);
+    $("#j-defender").addClass("btn-disabled-def").attr("disabled", true);
+    $("#def-j").html(dos.def = dos.def + 10);
+    $("#uno").attr("disabled", false);
+
+    turno++;
+    $("#resultado").html("Turno número: " + turno);
+    $("#r-turno").html("En Turno").removeClass('sinTurno').addClass('enTurno');
+    $("#j-turno").html("En Espera").addClass('sinTurno');
+}
+
 $("#dos").click(function () {
     if (uno.life && dos.life > 0) {
 
         $("#dos,#j-defender").attr("disabled", true);
-        $("#dos,#j-defender").addClass("btn-disabled");
+        $("#dos").addClass("btn-disabled-def");
+        $("#j-defender").addClass("btn-disabled-def");
         $("#uno").attr("disabled", false);
 
         if (suerteRndm() == 13) {

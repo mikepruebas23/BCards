@@ -10,28 +10,10 @@
     <link rel="stylesheet" href="fontawesome-free-5.11.2-web/css/solid.css">
     <meta name="theme-color" content="#2F3BA2" />
     <title>BCards</title>
-
-    <link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="images/icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
-    <link rel="manifest" href="images/icons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
-    <div id="seleccion" class="seleccion" style="display: non; margin-top:-15px">
+    <div id="seleccion" class="seleccion" style="display: nonse; margin-top:-15px">
         <div id="cpu-inicia" class="cpu-inicia">cpu inicia</div>
         <div id="humano-inicia" class="humano-inicia">humano inicia</div>
         <div id="spinner" class="spinning-loader"></div>
@@ -73,7 +55,7 @@
         <div id="j-turno"></div>
         <div class="card-body">
             <!-- <div class="car-profile">
-                <img src="images/goasrra.svg" alt="CPU image" style="width: 60px;">
+                <img src="images/gosrra.svg" alt="CPU image" style="width: 60px;">
                 <p>CPU</p>
             </div> -->
             <div class="card-content">
@@ -100,8 +82,8 @@
             <button class="btn1" id="plusDef">DEF + 2</button>
         </div>
         <div class="card-footer" style="margin-top: 5px;">
-            <button class="btn1" id="dos" disabled>ATK</button>
-            <button class="btn1" id="j-defender" disabled>DEF</button>
+            <button class="btn-def" id="dos" disabled><i class="fas fa-fist-raised" id="atac"style="color:#fff;"></i></button>
+            <button class="btn-def" id="j-defender" disabled><i class="fas fa-shield-alt" id="defe" style="color:#fff;"></i></button>
         </div>
     </div>
 
@@ -113,27 +95,5 @@
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/turno.js"></script>
 <script src="js/corazon.js"></script>
-<script>
-// This is the "Offline copy of pages" service worker
-
-// Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
-
-// Check compatibility for the browser we're running this in
-if ("serviceWorker" in navigator) {
-  if (navigator.serviceWorker.controller) {
-    console.log("[PWA Builder] active service worker found, no need to register");
-  } else {
-    // Register the service worker
-    navigator.serviceWorker
-      .register("pwabuilder-sw.js", {
-        scope: "./"
-      })
-      .then(function (reg) {
-        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-      });
-  }
-}
-
-</script>
 
 </html>

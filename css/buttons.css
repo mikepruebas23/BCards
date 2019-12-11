@@ -36,6 +36,7 @@
     border-radius: 3px;
     text-shadow: 1px 1px #000, -1px 1px #000, 1px -1px #000, -1px -1px #000, 1px 1px 5px #555;
 }
+
 .btn2 {
     font-family: 'Lilita One';
     margin-top: 10%;
@@ -60,16 +61,41 @@
     border-radius: 3px;
     text-shadow: 1px 1px #000, -1px 1px #000, 1px -1px #000, -1px -1px #000, 1px 1px 5px #555;
 }
+
+.btn-def {
+    margin: 5px 0;
+    /* height: 10%;
+    width: 45%; */
+    width: 20%;
+    padding: 5px;
+    box-shadow: rgba(255, 255, 255, 0.01) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 1px;
+    border-top-width: 0.0625rem;
+    transition: color 0.1s ease-in-out 0s,
+        background-color 0.1s ease-in-out 0s;
+    border-width: 1px;
+    border-radius: 0.25rem;
+    background: var(--morado);
+    box-shadow: 0 0 0 1px #000;
+    border-bottom: 3px solid #5b62bf;
+    border-top: 3px solid #9aa1f9;
+    border-radius: 3px;
+}
+
 .btn1:active {
     transform: scale(.9);
-
 }
+
 .btn2:active {
     transform: scale(.9);
-
 }
-.btn-disabled{
+
+.btn-disabled {
     background: #edf2f9 !important;
     border-bottom: 3px solid #edf2f9 !important;
     border-top: 3px solid #edf2f9 !important;
+}
+.btn-disabled-def {
+    background: #383c77 !important;
+    border-bottom: 3px solid #383c77 !important;
+    border-top: 3px solid #383c77 !important;
 }
