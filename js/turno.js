@@ -2,6 +2,8 @@ var iDadoAtk;
 var iDadoDef;
 var turno = 1;
 var ronda;
+var timer;
+var iSegundos = 3;
 
 //maximizadores
 let plusAtk;
@@ -9,6 +11,7 @@ let plusDef;
 let plusLife;
 
 let iSuerte;
+
 
 //id de elementos
 
@@ -95,6 +98,7 @@ $(document).ready(function () {
                 $("#j-turno").html("En Espera");
                 $("#j-turno").addClass('sinTurno');
                 $("#dos,#j-defender").addClass("btn-disabled-def");
+                $("#reloj").addClass('relojOff');
                 break;
             case 2:
                 $("#humano-inicia").show();
@@ -103,6 +107,9 @@ $(document).ready(function () {
                 $("#j-turno").addClass('enTurno');
                 $("#r-turno").html("En Espera");
                 $("#r-turno").addClass('sinTurno');
+                setTimeout(function () {
+                    tiempoTurno();
+                }, 2000);
                 break;
         }
 
@@ -141,7 +148,7 @@ function randomD() {
     return iDadoDef;
 }
 
-$("#resultado").html("Turno número: " + turno);
+$("#resultado").html("Turno: " + turno);
 // function cpuATK() {
 $("#uno").click(function () {
     if (uno.life && dos.life > 0) {
@@ -192,12 +199,16 @@ $("#uno").click(function () {
     $("#def-j").html(dos.def);
 
     turno++;
-    $("#resultado").html("Turno número: " + turno);
+    $("#resultado").html("Turno: " + turno);
     $("#j-turno").html("En Turno");
     $("#j-turno").removeClass('sinTurno');
     $("#j-turno").addClass('enTurno');
     $("#r-turno").html("En Espera");
     $("#r-turno").addClass('sinTurno');
+
+    iSegundos = 3;
+    $("#countdown").html(iSegundos + ' seg');
+    tiempoTurno();
 });
 
 function playerSeleccionATK() {
@@ -212,7 +223,7 @@ function playerSeleccionDEF() {
     $("#uno").attr("disabled", false);
 
     turno++;
-    $("#resultado").html("Turno número: " + turno);
+    $("#resultado").html("Turno: " + turno);
     $("#r-turno").html("En Turno").removeClass('sinTurno').addClass('enTurno');
     $("#j-turno").html("En Espera").addClass('sinTurno');
 }
@@ -272,7 +283,7 @@ $("#dos").click(function () {
     $("#def-r").html(uno.def);
 
     turno++;
-    $("#resultado").html("Turno número: " + turno);
+    $("#resultado").html("Turno: " + turno);
     $("#r-turno").html("En Turno");
     $("#r-turno").removeClass('sinTurno');
     $("#r-turno").addClass('enTurno');
@@ -292,4 +303,39 @@ function isAlive() {
         $("#uno").attr("disabled", true);
         return;
     }
+}
+
+function tiempoTurno() {
+    $("#reloj").removeClass('relojOff');
+    $("#reloj").addClass('relojOn');
+
+    function showRemaining() {
+        if (iSegundos <= 0) {
+
+            clearInterval(timer);
+
+            $("#countdown").html('Tiempo!');
+
+            $("#reloj").removeClass('relojOn');
+            $("#reloj").addClass('relojOff');
+
+            var x = Math.floor(Math.random() * (3 - 1)) + 1;
+            switch (x) {
+                case 1:
+                    playerSeleccionATK();
+                    console.log("ATK");
+                    break;
+                case 2:
+                    playerSeleccionDEF();
+                    console.log("DEF");
+                    break;
+            }
+            return;
+        }
+
+        iSegundos--;
+        $("#countdown").html(iSegundos + ' seg');
+
+    }
+    timer = setInterval(showRemaining, 1000);
 }

@@ -13,17 +13,28 @@
 </head>
 
 <body>
-    <div id="seleccion" class="seleccion" style="display: nonse; margin-top:-15px">
+    <div id="seleccion" class="seleccion" style="display: one; margin-top:-15px">
         <div id="cpu-inicia" class="cpu-inicia">cpu inicia</div>
         <div id="humano-inicia" class="humano-inicia">humano inicia</div>
         <div id="spinner" class="spinning-loader"></div>
         <button id="turno" class="btn2">Empezar</button>
     </div>
 
-    <div class="info card card-text">
-        <div class="info-turno" id="resultado"></div>
-        <div class="info-ganador" id="ganador">Ganador: </div>
+    <div class="contenedor-card">
+        <div class="info card card-text">
+            <div class="info-turno" id="resultado" style="width:25%"></div>
+            <div class="info-ganador" id="ganador" style="width:50%">Ganador: </div>
+        </div>
+        <div class="card card-text" style="margin-left: 10px; margin-left: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;">
+            <i class="fas fa-hourglass" id="reloj"></i>
+            <div class="info-tiempo" id="countdown" style="width: 50%;">3 seg</div>
+        </div>
     </div>
+
     <div class="card">
         <div id="r-turno"></div>
         <div class="card-body">
@@ -82,8 +93,10 @@
             <button class="btn1" id="plusDef">DEF + 2</button>
         </div>
         <div class="card-footer" style="margin-top: 5px;">
-            <button class="btn-def" id="dos" disabled><i class="fas fa-fist-raised" id="atac"style="color:#fff;"></i></button>
-            <button class="btn-def" id="j-defender" disabled><i class="fas fa-shield-alt" id="defe" style="color:#fff;"></i></button>
+            <button class="btn-def" id="dos" disabled><i class="fas fa-fist-raised" id="atac"
+                    style="color:#fff;"></i></button>
+            <button class="btn-def" id="j-defender" disabled><i class="fas fa-shield-alt" id="defe"
+                    style="color:#fff;"></i></button>
         </div>
     </div>
 

@@ -10,7 +10,8 @@
     box-shadow: 0 7px 14px 0 rgba(65, 69, 88, .1), 0 3px 6px 0 rgba(0, 0, 0, .07);
     margin-top: 15px;
 }
-.enTurno{
+
+.enTurno {
     font-family: 'Lilita One';
     font-size: 15px;
     background: var(--verde-energia);
@@ -19,7 +20,8 @@
     text-transform: uppercase;
     color: #fff;
 }
-.sinTurno{
+
+.sinTurno {
     font-family: 'Lilita One';
     font-size: 15px;
     background: var(--rojo);
@@ -28,6 +30,7 @@
     text-transform: uppercase;
     color: #fff;
 }
+
 .card-body {
     display: flex;
     padding: 5px;
@@ -37,27 +40,31 @@
 .card-content {
     width: 20%;
 }
-.card-text{
+
+.card-text {
     font-family: 'Lilita One';
     font-size: 13px;
 }
+
 .t-card {
     /* font-family: 'lilita One'; */
     color: #5e6e82;
     line-height: 1.5;
     /* text-shadow: 2px 2px #000; */
 }
-.card-footer{
+
+.card-footer {
     width: 100%;
     display: flex;
     flex-direction: row;
-    background:#aab8c2;
+    background: #aab8c2;
     /* padding: 5px; */
     justify-content: space-around;
     /* border-radius: .375rem; */
     margin: 0 auto;
 }
-.cf-child{
+
+.cf-child {
     background: var(--fondo-gris-claro);
 }
 
@@ -88,15 +95,27 @@
         background-position: right;
     }
 }
+
 #heart,
 #rayo,
 #suerte,
 #defe,
-#atac{
+#atac {
     color: #aab8c2;
     font-size: 20px;
     /* text-shadow: 1px 1px #0a0a0a; */
 }
+
+.relojOff {
+    color: #aab8c2;
+    font-size: 15px;
+}
+
+.relojOn {
+    color: var(--naranja);
+    font-size: 15px;
+}
+
 .is-rayo {
 
     color: var(--lime) !important;

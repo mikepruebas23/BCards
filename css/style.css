@@ -11,44 +11,45 @@
     margin: 0;
     padding: 0;
 }
+
 :root {
     --s-loader-wrapper-bg-color: rgb(21, 22, 43);
     --s-loader-width: 20px;
     --s-loader-height: var(--s-loader-width);
     --s-loader-border-color-trans: rgba(255, 235, 59, 0.3);
     --s-loader-border-color-full: #FFEB3B;
-    --rojo:#f12639;
+    --rojo: #f12639;
     --lime: #82c91e;
     --verde-on: #00d27a;
     --verde-energia: #2cc185;
-    --s-gris-fondo1:#f4f4f4;
-    --negro-fondo1:#323232;
-    --morado:#727cf5;
-    --fondo-gris-claro:#edf2f9;
-    --amarillo:#ffc107 ;
-    --fondo-gris2: #aab8c2; 
-  }
+    --s-gris-fondo1: #f4f4f4;
+    --negro-fondo1: #323232;
+    --morado: #727cf5;
+    --fondo-gris-claro: #edf2f9;
+    --amarillo: #ffc107;
+    --fondo-gris2: #aab8c2;
+    --naranja: #ff9800;
+}
 
 @media screen and (min-width: 320px) and (max-width: 736px) {
-    body{
+    body {
         background: var(--fondo-gris-claro);
     }
-    .info{
+
+    .info {
         display: flex;
         flex-direction: row;
-       
+
     }
-    /* .info-turno{
-        background: var(--fondo-gris2); 
-        color: var(--fondo-amarillo); 
-    } */
+
     .info-turno,
-    .info-ganador{
+    .info-ganador {
         text-align: center;
-        margin: 0 auto;
+        /* margin: 0 auto; */
         /* background:#aab8c2; */
-        width:45%;
+
     }
+
     .seleccion {
         height: 100vh;
         width: 100%;
@@ -70,10 +71,24 @@
         padding: 10px;
     }
 
-    .contenedor-tarjeta {
-        width: 100%;
-        background: white;
-        margin-bottom: 20px;
+    .contenedor-card {
+        display: flex;
+        width: 95%;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .contenedor-card div:nth-child(1) {
+        width: 60%;
+    }
+
+    .contenedor-card div:nth-child(2) {
+        width: 30%;
+    }
+
+    .info-tiempo {
+        text-align: center;
+        margin: 0 auto;
     }
 
     .datos {
