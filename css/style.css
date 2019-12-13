@@ -1,6 +1,7 @@
 @import url('buttons.css');
 @import url('spinner.css');
 @import url('card.css');
+@import url('snackbar.css');
 
 @font-face {
     font-family: 'Lilita One';
@@ -34,6 +35,12 @@
 @media screen and (min-width: 320px) and (max-width: 736px) {
     body {
         background: var(--fondo-gris-claro);
+    }
+
+    .humano-inicia,
+    .cpu-inicia {
+        font-family: 'Lilita One';
+        font-size: -webkit-xxx-large;
     }
 
     .info {
@@ -120,5 +127,21 @@
 
     .potenciadores>div {
         width: 30%;
+    }
+
+    .contenedor-mensajes {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 15px;
+        text-align: center;
+        padding: 10px;
+        border-radius: .165rem;
+        background: var(--fondo-gris2);
+        box-shadow: inset 0 0.25rem 0.125rem 0 rgba(0,0,0,0.1);
+    }
+
+    .mensajes {
+        /* font-family: 'Lilita One'; */
+        color: #fff;
     }
 }

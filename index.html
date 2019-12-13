@@ -13,16 +13,16 @@
 </head>
 
 <body>
-    <div id="seleccion" class="seleccion" style="display: one; margin-top:-15px">
-        <div id="cpu-inicia" class="cpu-inicia">cpu inicia</div>
-        <div id="humano-inicia" class="humano-inicia">humano inicia</div>
+    <div id="seleccion" class="seleccion" style="display: nonee; margin-top:-15px">
+        <div id="cpu-inicia" class="cpu-inicia">CPU INICIA</div>
+        <div id="humano-inicia" class="humano-inicia">PLAYER INICIA</div>
         <div id="spinner" class="spinning-loader"></div>
         <button id="turno" class="btn2">Empezar</button>
     </div>
 
     <div class="contenedor-card">
         <div class="info card card-text">
-            <div class="info-turno" id="resultado" style="width:25%"></div>
+            <div class="info-turno" id="resultado" style="width:40%"></div>
             <div class="info-ganador" id="ganador" style="width:50%">Ganador: </div>
         </div>
         <div class="card card-text" style="margin-left: 10px; margin-left: 10px;
@@ -31,11 +31,11 @@
             align-items: center;
             flex-direction: row;">
             <i class="fas fa-hourglass" id="reloj"></i>
-            <div class="info-tiempo" id="countdown" style="width: 50%;">3 seg</div>
+            <div class="info-tiempo" id="countdown" style="width: 50%;">7 seg</div>
         </div>
     </div>
 
-    <div class="card">
+    <div class="card"  >
         <div id="r-turno"></div>
         <div class="card-body">
             <!-- <div class="car-profile">
@@ -62,6 +62,11 @@
         </div>
 
     </div>
+
+    <div class="contenedor-mensajes">
+        <div id="mensajes" class="mensajes">Lorem ipsum dolor sit amet.</div>
+    </div>
+
     <div class="card">
         <div id="j-turno"></div>
         <div class="card-body">
@@ -93,20 +98,16 @@
             <button class="btn1" id="plusDef">DEF + 2</button>
         </div>
         <div class="card-footer" style="margin-top: 5px;">
-            <button class="btn-def" id="dos" disabled><i class="fas fa-fist-raised" id="atac"
-                    style="color:#fff;"></i></button>
-            <button class="btn-def" id="j-defender" disabled><i class="fas fa-shield-alt" id="defe"
-                    style="color:#fff;"></i></button>
+            <button onclick="playerSeleccionATK()" class="btn-def" id="dos" disabled><i class="fas fa-fist-raised" id="atac" style="color:#fff;"></i></button>
+            <button onclick="playerSeleccionDEF()" class="btn-def" id="j-defender" disabled><i class="fas fa-shield-alt" id="defe" style="color:#fff;"></i></button>
+            <button onclick="pasarTurno()" class="btn1" id="j-passT" disabled>Pass</button> 
         </div>
     </div>
-
-    <button id="uno">UNO</button>
-    <br>
-    <br>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="js/jquery-3.4.1.min.js"></script>
-<script src="js/turno.js"></script>
+<script src="js/index.js"></script>
 <script src="js/corazon.js"></script>
+
 
 </html>
