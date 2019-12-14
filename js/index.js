@@ -52,6 +52,7 @@ $("#plusLife").click(function () {
 $(document).ready(function () {
 
     $("#spinner, #cpu-inicia, #humano-inicia").hide();
+    $('#turno').addClass('hover');
 
     $("#atk-r").html(uno.atk);
     $("#def-r").html(uno.def);
@@ -121,6 +122,8 @@ function cpuSeleccionATK() {
             dos.life = dos.life - x;
             $("#life-j").html(dos.life);
             dos.energia = dos.energia + 1;
+            $("#j-heart").addClass("shake-opacity").addClass("red");
+            moverCorazon();
             if (dos.life <= 0) {
                 isAlive();
             }
@@ -130,11 +133,15 @@ function cpuSeleccionATK() {
             if (isNegative == 1) {
                 uno.life = uno.life - x;
                 $("#life-r").html(uno.life);
+                $("#heart").addClass("shake-opacity").addClass("red");
+                moverCorazon2();
 
             } else {
                 x *= -1;
                 uno.life = uno.life - x;
                 $("#life-r").html(uno.life);
+                $("#heart").addClass("shake-opacity").addClass("red");
+                moverCorazon2();
                 if (uno.life <= 0) {
                     isAlive();
                 }
@@ -258,6 +265,8 @@ function playerSeleccionATK() {
             let x = dos.atk - uno.def;
             uno.life = uno.life - x;
             $("#life-r").html(uno.life);
+            $("#heart").addClass("shake-opacity").addClass("red");
+            moverCorazon2();
             uno.energia = uno.energia + 1;
             if (uno.life <= 0) {
                 isAlive();
@@ -268,10 +277,14 @@ function playerSeleccionATK() {
             if (isNegative == 1) {
                 dos.life = dos.life - x;
                 $("#life-j").html(dos.life);
+                $("#j-heart").addClass("shake-opacity").addClass("red");
+                moverCorazon();
             } else {
                 x *= -1;
                 dos.life = dos.life - x;
                 $("#life-j").html(dos.life);
+                $("#j-heart").addClass("shake-opacity").addClass("red");
+                moverCorazon();
                 if (dos.life <= 0) {
                     isAlive();
                 }
@@ -362,5 +375,18 @@ function cpuSeleccionAccion() {
             cpuSeleccionPASS();
             break;
     }
+}
+
+function moverCorazon(){
+
+    setTimeout(function () {
+        $("#j-heart").removeClass("shake-opacity").removeClass("red");
+    }, 500);  
+}
+function moverCorazon2(){
+
+    setTimeout(function () {
+        $("#heart").removeClass("shake-opacity").removeClass("red");
+    }, 500);  
 }
 //355 LINEAS

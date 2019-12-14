@@ -2,6 +2,7 @@
 @import url('spinner.css');
 @import url('card.css');
 @import url('snackbar.css');
+@import url('csshake-horizontal.css');
 
 @font-face {
     font-family: 'Lilita One';
@@ -35,6 +36,9 @@
 @media screen and (min-width: 320px) and (max-width: 736px) {
     body {
         background: var(--fondo-gris-claro);
+    }
+    .red{
+        color: var(--rojo) !important;
     }
 
     .humano-inicia,
